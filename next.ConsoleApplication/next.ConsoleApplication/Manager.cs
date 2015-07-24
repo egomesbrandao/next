@@ -9,9 +9,9 @@ using Dear.KeyboardControl;
 
 namespace next.ConsoleApplication
 {
-    class Program
+    public class Manager
     {
-        static void Main(string[] args)
+        public void Main()
         {            
             ICamera cam = Camera.Create();
             var win = new Dear.MrWindows();

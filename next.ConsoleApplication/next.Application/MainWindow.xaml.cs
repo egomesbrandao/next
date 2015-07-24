@@ -27,6 +27,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using next.ConsoleApplication;
 
 namespace Streams
 {
@@ -42,10 +43,12 @@ namespace Streams
             InitializeComponent();
             
             // Initializing the image stream
-            imageStream = new RealSenseImageStream(PXCMCapture.StreamType.STREAM_TYPE_IR); // Change here with you want to see other stream types
+            imageStream = new RealSenseImageStream(PXCMCapture.StreamType.STREAM_TYPE_COLOR); // Change here with you want to see other stream types
             imageStream.InitializeStream();
             imageStream.StartStream();
             imageStream.NewImageAvailable += imageStream_NewImageAvailable;
+
+            //next.ConsoleApplication.Manager nextManager = new next.ConsoleApplication.Manager();           
 
             this.SizeChanged +=MainWindow_SizeChanged;
             this.Loaded += MainWindow_Loaded;
